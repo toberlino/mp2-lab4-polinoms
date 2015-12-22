@@ -41,6 +41,6 @@ Monom& Monom::operator=(const Monom &m){
 
 std::ostream& operator<<(ostream &out, const Monom &m)
   {
-	  out << '(' << m.coef << '\;' << m.deg << ')'<<endl;
+	  out << '(' << m.coef << ';' << m.deg << ')'<<endl;
 	  return out;
   }
