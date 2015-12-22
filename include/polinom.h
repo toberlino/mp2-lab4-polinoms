@@ -6,28 +6,50 @@
 #include "monom.h"
 
 
-class Polinom {
+class PNode {
 private:
-	Monom *data;				//данные одного звена
-	Polinom *next;				//указатель на следующий
-	Polinom *head;				//указатель но голову
+	Monom data;				//данные одного звена
+	PNode *next;				//указатель на следующий
 public:
-	Polinom();
-	Polinom (const Polinom &p);
-	~Polinom() {};
-
+	PNode();
+	~PNode();
+	PNode (const PNode &p);
+	PNode(Monom m, PNode* n);
 };
 
 
-Polinom::Polinom() {
-	/*head=new Polinom;
-	head->next=head;*/
-	next==NULL;
+PNode::PNode() {
+	data;                             //
+	next=NULL;
 }
 
-Polinom::Polinom(const Polinom &p){
-	head=p.head;
+PNode::~PNode(){};
+
+PNode::PNode(const PNode &p)
+{
 	data=p.data;
 	next=p.next;
 }
 
+PNode::PNode(Monom m,PNode* n)
+{
+	data=m;
+	next=n;
+};
+
+
+
+class PList {
+private:
+	PNode *head;
+public:
+	PList();
+	~PList();
+	PList(const PList &p);
+};
+
+
+PList :: PList () //конструктор по умолчанию
+{
+	head = new PNode;
+}

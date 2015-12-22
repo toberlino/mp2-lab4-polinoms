@@ -9,9 +9,9 @@ private:
 	double coef;
 	int deg;
 public:
-	Monom (double a, int deg);
+	Monom (double a=0, int deg=0);
 	Monom (const Monom &m);
-	~Monom(){};
+	~Monom();
 	Monom& operator=(const Monom &m);
 	friend ostream& operator<<(ostream &out, const Monom &m);
 };
@@ -22,6 +22,8 @@ Monom::Monom(double _coef, int _deg) {
 	coef=_coef;
 	deg=_deg;
 }
+
+Monom::~Monom(){};
 
 Monom::Monom (const Monom &m){
 	coef=m.coef;
